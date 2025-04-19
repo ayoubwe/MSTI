@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSTI - MOROCCAN SPORT TECK INNOVATION</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="min-h-screen relative">
+    <!-- Background Animation -->
+    <div id="particles-background" class="fixed inset-0 z-0">
+        <div id="particles-js"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0">
+        <div class="nav-container">
+            <div class="relative flex items-center justify-between">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <img src="assets/images/logo 2 msti.png" alt="SCAI Logo">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-menu hidden lg:flex items-center space-x-8">
+                    <a href="#about" class="nav-link group">
+                        <span class="relative">
+                            About
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                    <a href="#journey" class="nav-link group">
+                        <span class="relative">
+                            Journey
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                    <a href="#products" class="nav-link group">
+                        <span class="relative">
+                            Playbook
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                    <a href="#partnerships" class="nav-link group">
+                        <span class="relative">
+                            Partnerships
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                    <a href="#contact" class="nav-link group">
+                        <span class="relative">
+                            Contact
+                            <span class="nav-link-underline"></span>
+                        </span>
+                    </a>
+                </div>
+<button class="btn-primary px-8 py-1.5 rounded-full text-white font-semibold transition-all transform hover:scale-105 hidden lg:block" onclick="window.location.href='https://buy.stripe.com/test_dR616O8TxgT30OAcMM'">
+                    Donate
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden nav-toggle" id="menu-toggle">
+                    <span class="sr-only">Open menu</span>
+                    <div class="nav-toggle-bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-[#0a0a29]/95 backdrop-blur-lg transform translate-x-full z-50 lg:hidden">
+        <div class="p-6">
+            <div class="flex flex-col space-y-4 mt-16">
+                <a href="#about" class="nav-link group py-3">
+                    <span class="relative text-lg">
+                        About
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <a href="#journey" class="nav-link group py-3">
+                    <span class="relative text-lg">
+                        Journey
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <a href="#products" class="nav-link group py-3">
+                    <span class="relative text-lg">
+                        Playbook
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <a href="#partnerships" class="nav-link group py-3">
+                    <span class="relative text-lg">
+                        Partnerships
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <a href="#contact" class="nav-link group py-3">
+                    <span class="relative text-lg">
+                        Contact
+                        <span class="nav-link-underline"></span>
+                    </span>
+                </a>
+                <button class="btn-primary btn-glow nav-button rounded-full text-white hover:opacity-90 transition-opacity w-full py-3 mt-4" onclick="window.location.href='https://buy.stripe.com/test_dR616O8TxgT30OAcMM'">
+                    Donate
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden hero-bg">
+        <div class="absolute inset-0 gradient-overlay z-10"></div>
+        <div class="container mx-auto px-6 relative z-20 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-down" data-aos-delay="200">
+                <span class="text-gradient-animate">Ahead of The Game</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                A groundbreaking robotic and AI powered ecosystem designed to revolutionize the sports landscape in morocco.
+            </p>
+            <button class="btn-primary btn-hover btn-glow px-8 py-3 rounded-full text-white font-semibold transition-all transform hover:scale-105" data-aos="fade-up" data-aos-delay="600" onclick="window.location.href='https://forms.office.com/r/iLbQ17K4MA?origin=lprLink'">
+                Join Us
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 section-transition scroll-mt-24" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">About MSTI</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <p class="text-lg leading-relaxed text-gray-300">
+                        MSTI serves as a national robotics and AI champion in Morocco, offering end-to-end cutting-edge robotics and AI solutions in the sport industry.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-300 mt-6">
+                        With a vision to lead the next generation of robotics and AI applications and unlock global value, MSTI is committed to shaping the future of robotics andAI through best in class partnerships, targeted investments and strategic capabilities addressing market gaps globally.
+                    </p>
+                    <a href="#journey" class="btn-primary btn-glow px-6 py-3 rounded-full text-white font-semibold mt-8 hover:opacity-90 transition-opacity inline-block">
+                        Learn More
+                    </a>
+                </div>
+                <div class="relative h-96 bg-gradient-primary rounded-lg overflow-hidden animate-float" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Placeholder for about section image/animation -->
+                </div>
+            </div>
+
+            <!-- Vision & Mission Cards -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Vision Card -->
+                <div class="bg-[#0a0a35] p-8 rounded-xl">
+                    <div class="flex flex-col h-full">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Our Vision</h3>
+                            <div class="w-14 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                        </div>
+                        <p class="text-lg leading-relaxed text-gray-300">
+                            To lead the next generation of robotics and AI applications to unlock value globally
+                        </p>
+                    </div>
+                </div>
+                <!-- Mission Card -->
+                <div class="bg-[#0a0a35] p-8 rounded-xl">
+                    <div class="flex flex-col h-full">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Our Mission</h3>
+                            <div class="w-14 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                        </div>
+                        <p class="text-lg leading-relaxed text-gray-300">
+                            To be the ecosystem catalyst to shape the future of robotics and AI in the sport industry through best in class partnership, targeted investment and strategic capabilities addressing market gaps globally
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="py-20 section-transition scroll-mt-24 relative" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Our Journey</h2>
+            
+            <div class="journey-slider relative overflow-hidden rounded-xl bg-[#0a0a35]/50 backdrop-blur-md">
+                <!-- Slides -->
+                <div class="journey-slides" style="border-radius: 24px; overflow: hidden; width: 100%; height: 620px;">
+                    <!-- Add slide counter -->
+                    <div class="journey-counter" style="position: absolute; top: 24px; right: 24px; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); padding: 8px 16px; border-radius: 100px; z-index: 10; font-size: 14px; font-weight: 500;">
+                        <span class="current-slide">01</span>
+                        <span class="opacity-50">/</span>
+                        <span class="total-slides">06</span>
+                    </div>
+                    <div class="journey-slide active" data-index="1" style="background-image: url('assets/images/digital platform.jpg'); background-size: cover; background-position: center; position: absolute; inset: 0;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));"></div>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 80px;">
+                            <div style="max-width: 1000px; width: 100%;">
+                                <h3 class="text-5xl font-bold mb-6 text-white">Interactive Digital Learning Platform</h3>
+                                <p class="text-2xl mb-10 text-gray-200" style="max-width: 800px;">Step-by-step courses, real coding exercises, simulations, and quizzes to master robotics and digital sports — anytime, anywhere.</p>
+                                <div class="flex flex-wrap gap-5">
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Online Courses</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Coding Exercises</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Interactive Quizzes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-slide" data-index="2" style="background-image: url('assets/images/workshop.jpg'); background-size: cover; background-position: center; position: absolute; inset: 0;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));"></div>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 80px;">
+                            <div style="max-width: 1000px; width: 100%;">
+                                <h3 class="text-5xl font-bold mb-6 text-white">Hands-On Robotics Workshops</h3>
+                                <p class="text-2xl mb-10 text-gray-200" style="max-width: 800px;">Access real tools and robotics kits in our hubs. Build, test, and tinker with expert mentors by your side.</p>
+                                <div class="flex flex-wrap gap-5">
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Real Tools</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Expert Mentors</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Practical Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-slide" data-index="3" style="background-image: url('assets/images/competition.jpg'); background-size: cover; background-position: center; position: absolute; inset: 0;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.6));"></div>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 80px;">
+                            <div style="max-width: 1000px; width: 100%;">
+                                <h3 class="text-5xl font-bold mb-6 text-white">Competitions & Innovation Challenges</h3>
+                                <p class="text-2xl mb-10 text-gray-200" style="max-width: 800px;">Join Morocco's first robotics and sport-tech competition! Qualify online or regionally, and showcase your project at RoboSports Morocco.</p>
+                                <div class="flex flex-wrap gap-5">
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">RoboSports Morocco</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Online Qualifiers</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Regional Events</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-slide" data-index="4" style="background-image: url('assets/images/guidance.jpg'); background-size: cover; background-position: center; position: absolute; inset: 0;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.6));"></div>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 80px;">
+                            <div style="max-width: 1000px; width: 100%;">
+                                <h3 class="text-5xl font-bold mb-6 text-white">Mentorship & Career Guidance</h3>
+                                <p class="text-2xl mb-10 text-gray-200" style="max-width: 800px;">Get advice from engineers, entrepreneurs, and sport-tech leaders through forums, Q&A sessions, and project reviews.</p>
+                                <div class="flex flex-wrap gap-5">
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Expert Forums</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Q&A Sessions</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Project Reviews</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-slide" data-index="5" style="background-image: url('assets/images/pitch.jpg'); background-size: cover; background-position: center; position: absolute; inset: 0;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.6));"></div>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 80px;">
+                            <div style="max-width: 1000px; width: 100%;">
+                                <h3 class="text-5xl font-bold mb-6 text-white">Startup Pitch Opportunities</h3>
+                                <p class="text-2xl mb-10 text-gray-200" style="max-width: 800px;">Pitch your innovation to real investors and partners. From idea to market-ready product, we help you take the leap.</p>
+                                <div class="flex flex-wrap gap-5">
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Investor Pitches</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Market Readiness</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Partner Connections</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="journey-slide" data-index="6" style="background-image: url('assets/images/networking.jpg'); background-size: cover; background-position: center; position: absolute; inset: 0;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.6));"></div>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 80px;">
+                            <div style="max-width: 1000px; width: 100%;">
+                                <h3 class="text-5xl font-bold mb-6 text-white">Community & Networking</h3>
+                                <p class="text-2xl mb-10 text-gray-200" style="max-width: 800px;">Connect through our online hub Discord, meet at local events, and find your tribe of builders, dreamers, and doers.</p>
+                                <div class="flex flex-wrap gap-5">
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Online Community</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Local Events</span>
+                                    <span class="px-8 py-3 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-white text-lg">Networking</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timer/Next Button -->
+                <div class="journey-controls" style="position: absolute; bottom: 40px; right: 24px; z-index: 20;">
+                    <div class="journey-timer" style="width: 50px; height: 50px; position: relative;">
+                        <!-- Timer Circle -->
+                        <svg class="journey-timer-svg" viewBox="0 0 36 36" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+                            <circle class="journey-timer-bg" cx="18" cy="18" r="16" style="fill: none; stroke: rgba(255, 255, 255, 0.1); stroke-width: 2;"></circle>
+                            <circle class="journey-timer-progress" cx="18" cy="18" r="16" stroke-dasharray="100" stroke-dashoffset="0" style="fill: none; stroke: white; stroke-width: 2; transform: rotate(-90deg); transform-origin: 50% 50%;"></circle>
+                        </svg>
+                        
+                        <!-- Button with Icon -->
+                        <div class="journey-next-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                            <!-- Next Icon (shows on hover) -->
+                            <svg class="next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; color: white; display: none; position: absolute;">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 section-transition scroll-mt-24" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="products-header">
+                <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Our Playbook</h2>
+                <div class="products-navigation">
+                    <button class="playbook-nav-button prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="playbook-nav-button next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="products-wrapper min-h-[800px] mt-8 overflow-hidden relative" style="cursor: grab;">
+                <div class="products-track inline-flex gap-6 px-4 pb-4 min-w-max">
+                    <!-- Card 1 -->
+                    <div class="product-card bg-[#0a0a35]/50 backdrop-blur-md rounded-3xl p-8 hover:transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[700px] w-[500px]" onclick="window.location.href='https://forms.office.com/r/GNmTBZmzrK?origin=lprLink'">
+                        <div class="h-[300px] mb-8 overflow-hidden rounded-xl relative group">
+                            <img src="assets/images/democratize.jpg" alt="Democratize Access" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="space-y-6 flex-grow">
+                            <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold">Vision 1</span>
+                            <h3 class="text-2xl font-bold leading-tight">Democratize Access to Robotics & AI</h3>
+                            <p class="text-gray-300 leading-relaxed">We're making sure youth across all regions can learn, build, and innovate — no matter their background. From rural towns to city centers, everyone deserves the chance to explore tech.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 (formerly Card 5) -->
+                    <div class="product-card bg-[#0a0a35]/50 backdrop-blur-md rounded-3xl p-8 hover:transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[700px] w-[500px]">
+                        <div class="h-[300px] mb-8 overflow-hidden rounded-xl relative group">
+                            <img src="assets/images/world-cup.jpg" alt="World Cup Tech" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="space-y-6 flex-grow">
+                            <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold">Vision 2</span>
+                            <h3 class="text-2xl font-bold leading-tight">Prepare for the 2030 World Cup Tech Boom</h3>
+                            <p class="text-gray-300 leading-relaxed">Position Morocco as a tech pioneer for the World Cup — using smart systems, AR, IoT, and robotics to elevate the fan and athlete experience.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 (formerly Card 7) -->
+                    <div class="product-card bg-[#0a0a35]/50 backdrop-blur-md rounded-3xl p-8 hover:transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[700px] w-[500px]">
+                        <div class="h-[300px] mb-8 overflow-hidden rounded-xl relative group">
+                            <img src="assets/images/next-gen.jpg" alt="Next Generation" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="space-y-6 flex-grow">
+                            <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold">Vision 3</span>
+                            <h3 class="text-2xl font-bold leading-tight">Inspire the Next Generation</h3>
+                            <p class="text-gray-300 leading-relaxed">Through real-world challenges, hands-on learning, and bold goals, we spark curiosity and creativity in young Moroccans — turning passion into purpose.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="product-card bg-[#0a0a35]/50 backdrop-blur-md rounded-3xl p-8 hover:transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[700px] w-[500px]" onclick="window.location.href='https://forms.office.com/r/GNmTBZmzrK?origin=lprLink'">
+                        <div class="h-[300px] mb-8 overflow-hidden rounded-xl relative group">
+                            <img src="assets/images/talent.jpg" alt="Local Talent" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="space-y-6 flex-grow">
+                            <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold">Vision 4</span>
+                            <h3 class="text-2xl font-bold leading-tight">Retain & Empower Local Talent</h3>
+                            <p class="text-gray-300 leading-relaxed">Let's end the brain drain. By creating meaningful opportunities, we help Moroccan tech minds thrive at home and lead on a global stage.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 (formerly Card 2) -->
+                    <div class="product-card bg-[#0a0a35]/50 backdrop-blur-md rounded-3xl p-8 hover:transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[700px] w-[500px]" onclick="window.location.href='https://forms.office.com/r/GNmTBZmzrK?origin=lprLink'">
+                        <div class="h-[300px] mb-8 overflow-hidden rounded-xl relative group">
+                            <img src="assets/images/digital-sports.jpg" alt="Digital Sports" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="space-y-6 flex-grow">
+                            <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold">Vision 5</span>
+                            <h3 class="text-2xl font-bold leading-tight">Make Digital Sports a National Priority</h3>
+                            <p class="text-gray-300 leading-relaxed">Support Morocco's leap into the future with eSports, smart stadiums, VR fan experiences, and athlete performance tech — all while inspiring local talent to lead the charge.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="product-card bg-[#0a0a35]/50 backdrop-blur-md rounded-3xl p-8 hover:transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[700px] w-[500px]">
+                        <div class="h-[300px] mb-8 overflow-hidden rounded-xl relative group">
+                            <img src="assets/images/community.jpg" alt="Community" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="space-y-6 flex-grow">
+                            <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold">Vision 6</span>
+                            <h3 class="text-2xl font-bold leading-tight">Create a Community of Innovators</h3>
+                            <p class="text-gray-300 leading-relaxed">Unite students, professionals, and investors around a shared mission to push boundaries in sports and tech. Collaboration is where breakthroughs happen.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 (formerly Card 3) -->
+                    <div class="product-card bg-[#0a0a35]/50 backdrop-blur-md rounded-3xl p-8 hover:transform hover:scale-105 transition-all duration-300 flex flex-col min-h-[700px] w-[500px]" onclick="window.location.href='https://forms.office.com/r/GNmTBZmzrK?origin=lprLink'">
+                        <div class="h-[300px] mb-8 overflow-hidden rounded-xl relative group">
+                            <img src="assets/images/innovation.jpg" alt="Sports-Tech Innovation" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="space-y-6 flex-grow">
+                            <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold">Vision 7</span>
+                            <h3 class="text-2xl font-bold leading-tight">Drive Sports-Tech Innovation</h3>
+                            <p class="text-gray-300 leading-relaxed">Inspire the next wave of creators to build cutting-edge robotics and AI solutions tailored for the sports industry. Through collaborative spaces with experts, we fuel ideas that transform how we play, train, and engage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section id="partnerships" class="py-20 bg-[#0a0a35] section-transition scroll-mt-24" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Partnerships</h2>
+                <a href="https://forms.office.com/r/GNmTBZmzrK?origin=lprLink" class="border border-white/20 px-8 py-3 rounded-full text-white hover:bg-white hover:text-[#0a0a29] transition-all flex items-center gap-2 group">
+                    <span>Talk to us</span>
+                    <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+            <p class="text-lg text-gray-300 max-w-2xl mb-12">
+                At MSTI, we proudly collaborate with industry leaders, organizations, and technology experts to fuel innovation.
+            </p>
+
+            <!-- Partners Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Partner 1 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-12 flex items-center justify-center hover:bg-white/10 transition-all group">
+                    <img src="assets/images/212.png" alt="STC" class="w-70 h-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                </div>
+                
+                <!-- Partner 2 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-12 flex items-center justify-center hover:bg-white/10 transition-all group">
+                    <img src="assets/images/dell.png" alt="SDAIA" class="w-50 h-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                </div>
+                
+                <!-- Partner 3 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-12 flex items-center justify-center hover:bg-white/10 transition-all group">
+                    <img src="assets/images/1337.png" alt="Tahakom" class="w-70 h-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                </div>
+                
+                <!-- Partner 4 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-12 flex items-center justify-center hover:bg-white/10 transition-all group">
+                    <img src="assets/images/vex.png" alt="KAFD" class="w-55 h-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-24 section-transition scroll-mt-24" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-base uppercase tracking-wider text-gray-400 mb-4">CONTACT US</p>
+                <h2 class="text-5xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    We'd love to hear from you
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all cursor-pointer group min-h-[320px] flex flex-col" onclick="window.location.href='https://forms.office.com/r/GNmTBZmzrK?origin=lprLink'">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-6">Speak with robotics & AI Expert</h3>
+                        <p class="text-gray-400 text-base leading-relaxed">
+                            Want to send us your RFP?<br>
+                            Want to utilize our Robotics & AI solutions for your business?
+                        </p>
+                    </div>
+                    <div class="flex justify-end mt-8">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-all">
+                            <i class="fas fa-arrow-right text-xl text-white/70 group-hover:text-blue-400 transition-all"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all cursor-pointer group min-h-[320px] flex flex-col" onclick="window.location.href='https://forms.office.com/r/GNmTBZmzrK?origin=lprLink'">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-6">Partners Opportunities</h3>
+                        <p class="text-gray-400 text-base leading-relaxed">
+                            Want to propose a partnership?<br>
+                            Interested in exploring collaborations?
+                        </p>
+                    </div>
+                    <div class="flex justify-end mt-8">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-purple-500/20 transition-all">
+                            <i class="fas fa-arrow-right text-xl text-white/70 group-hover:text-purple-400 transition-all"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all cursor-pointer group min-h-[320px] flex flex-col" onclick="window.location.href='https://forms.office.com/r/GNmTBZmzrK?origin=lprLink'">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-6">General Inquiries</h3>
+                        <p class="text-gray-400 text-base leading-relaxed">
+                            Have a general question?<br>
+                            Interested in discussing media opportunities?
+                        </p>
+                    </div>
+                    <div class="flex justify-end mt-8">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-pink-500/20 transition-all">
+                            <i class="fas fa-arrow-right text-xl text-white/70 group-hover:text-pink-400 transition-all"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all cursor-pointer group min-h-[320px] flex flex-col" onclick="window.location.href='https://forms.office.com/r/GNmTBZmzrK?origin=lprLink'">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-6">Career Opportunities</h3>
+                        <p class="text-gray-400 text-base leading-relaxed">
+                            Interested in working with us?<br>
+                            Or exploring about our internships programs?
+                        </p>
+                    </div>
+                    <div class="flex justify-end mt-8">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-indigo-500/20 transition-all">
+                            <i class="fas fa-arrow-right text-xl text-white/70 group-hover:text-indigo-400 transition-all"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a35] border-t border-white/10 pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <!-- Footer Main Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo 2 msti.png" alt="MSTI Logo" class="h-12">
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        A groundbreaking robotic and AI-powered ecosystem designed to revolutionize the sports landscape in Morocco.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all group">
+                            <i class="fab fa-linkedin text-white/70 group-hover:text-blue-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all group">
+                            <svg class="w-4 h-4 text-white/70 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all group">
+                            <i class="fab fa-instagram text-white/70 group-hover:text-pink-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#journey" class="text-gray-400 hover:text-white transition-colors">Our Journey</a>
+                        </li>
+                        <li>
+                            <a href="#products" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li>
+                            <a href="#partnerships" class="text-gray-400 hover:text-white transition-colors">Partnerships</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-gray-400 mt-1"></i>
+                            <span class="text-gray-400">Rabat, Morocco</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-gray-400"></i>
+                            <a href="mailto:contact@msti.ma" class="text-gray-400 hover:text-white transition-colors">robomsti@msti.ma</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-gray-400"></i>
+                            <a href="tel:+212500000000" class="text-gray-400 hover:text-white transition-colors">+212 5 00 00 00 00</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe to our newsletter to receive updates and news.</p>
+                    <form class="space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Enter your email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors">
+                        </div>
+                        <a href="https://forms.office.com/r/GNmTBZmzrK?origin=lprLink" class="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all inline-block text-center">
+                            Subscribe
+                        </a>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 border-t border-white/10">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 MSTI. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="script.js" defer></script>
+</body>
+</html>
